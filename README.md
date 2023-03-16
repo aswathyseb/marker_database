@@ -1,6 +1,6 @@
 ### Marker Database
 	
-	Creation of a customizable marker database based on user-specifed marker sequence and taxa list.
+ Creation of a customizable marker database based on user-specifed marker sequence and taxa list.
 
 
 #### usage:
