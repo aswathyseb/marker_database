@@ -28,8 +28,10 @@ MARKER_TABLE=${MISC}/marker_table.txt
 MARKER_ACC= marker_acc.txt
 
 # File with marker fasta
-MARKER_FASTA= marker.fa
+MARKER_FASTA ?= marker.fa
 
+# File with metadata
+METADATA ?= 
 
 # Makefile customizations.
 .RECIPEPREFIX = >
@@ -73,8 +75,14 @@ get_fasta:
 > blastdbcmd -db nt -entry_batch ${MARKER_ACC} >${MARKER_FASTA}
 
 # Create an sqlite database of marker
+ifeq ($(METADATA),)
+cmd = python src/create_marker_db.py --database ${DBNAME} --sequence_table ${MARKER_TABLE}
+else
+cmd = python src/create_marker_db.py --database ${DBNAME} --sequence_table ${MARKER_TABLE} --status_table ${METADATA}
+endif
+
 create_db:
-> python src/create_marker_db.py --database ${DBNAME} --sequence_table ${MARKER_TABLE}
+>${cmd}
 
 marker_fasta: folders extract_tids extract_marker_info extract_marker_acc get_fasta
 > @ls -l ${MARKER_FASTA}
