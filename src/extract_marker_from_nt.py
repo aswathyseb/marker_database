@@ -119,7 +119,7 @@ marker_map = {"coi": "COI",
               "12s": "12S",
               "12Srrna": "12S",
               "rnr1 rrna": "12S",
-              "small subunit ribosomal RNA": "12S",
+              "small subunit ribosomal rna": "12S",
               "rrna small subunit": "12S", "small rrna subunit rna": "12S",
               "rrnS rrna": "12S", "s-rrna": "12S", "small subunit rRNA": "12S",
 
@@ -127,7 +127,7 @@ marker_map = {"coi": "COI",
               "large subunit rrna": "16S", "lsu rrna": "16S", "mtlsu rrna": "16S",
               "rnl rrna": "16S", "rnr2 rrna": "16S", "rrna large subunit": "16S",
               "rrnl rrna": "16S",
-              "large subunit ribosomal RNA": "16S",
+              "large subunit ribosomal rna": "16S",
 
               "complete genome": "complete genome",
 
